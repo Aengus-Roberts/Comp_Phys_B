@@ -27,8 +27,6 @@ public:
     // function which prints a string to the screen, at a given position, with a given color
     // note position is "absolute", not easy to get two strings spaced one above each other like this
     void displayString(ostringstream &str, double x, double y, GLfloat col[]);
-
-
 };
 
 
