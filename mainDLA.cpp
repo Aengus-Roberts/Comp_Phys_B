@@ -26,7 +26,7 @@ void runProgram(int seed, float stickProbability, int maxParticles, bool bump) {
     }
     // after system has been modelled output to a file with seed-prob-maxP as title
     stringstream title;
-    title << "data/" << seed << "-" << stickProbability << "-" << maxParticles << ".csv";
+    title << "data/" << seed << "-" << stickProbability << "-" << maxParticles<< "-" << bump << ".csv";
     ofstream runOutput(title.str());
     // iterates through cluster to write to file
     for (int i = 0; i < maxParticles; i++) {

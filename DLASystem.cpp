@@ -89,7 +89,7 @@ void DLASystem::addParticle(double pos[]) {
 // (this should never happen)
 void DLASystem::addParticleOnAddCircle() {
     double pos[2];
-    double theta = rnd::random01() * 2 * M_PI;
+    double theta = rgen.random01() * 2 * M_PI;
     pos[0] = ceil(addCircle * cos(theta));
     pos[1] = ceil(addCircle * sin(theta));
     if (readGrid(pos) == 0)
@@ -208,7 +208,7 @@ int DLASystem::checkStick() {
         setPosNeighbour(checkpos, lastP->pos, i);
         // if the neighbour is occupied...
         if (readGrid(checkpos) == 1){
-           if (stickProbability > rnd::random01()) {
+           if (stickProbability > rgen.random01()) {
                result = 1;
            }
         }
@@ -218,12 +218,12 @@ int DLASystem::checkStick() {
 
 
 // constructor
-DLASystem::DLASystem(int maxParticles, float probability,bool bump)
+DLASystem::DLASystem(int maxParticles, float probability,bool bump1)
         : clusterRadius(),addCircle(), killCircle(), running(), lastParticleIsActive(), cluster() {
     cout << "creating system, gridSize " << gridSize << endl;
     endNum = maxParticles;
     stickProbability = probability;
-    bump = bump;
+    bump = bump1;
 
     // allocate memory for the grid, remember to free the memory in destructor
     grid = new int *[gridSize];
