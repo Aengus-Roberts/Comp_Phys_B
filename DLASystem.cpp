@@ -14,13 +14,14 @@ using std::stringstream;
 void DLASystem::Update() {
     if (lastParticleIsActive == 1) {
         moveLastParticle();
-    } else if (particleList.size() < endNum) {
+    }
+    else if (particleList.size() < endNum) {
         addParticleOnAddCircle();
         setParticleActive();
-    } else {
+    }
+    else {
         running = false;
     }
-
 }
 
 

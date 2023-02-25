@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <fstream>
 
 #include "DLASystem.h"
 
@@ -26,7 +25,7 @@ void runProgram(int seed, float stickProbability, int maxParticles, bool bump) {
     }
     // after system has been modelled output to a file with seed-prob-maxP as title
     stringstream title;
-    title << "data/" << seed << "-" << stickProbability << "-" << maxParticles<< "-" << bump << ".csv";
+    title << "data/" << seed << "-" << stickProbability << "-" << maxParticles << "-" << bump << ".csv";
     ofstream runOutput(title.str());
     // iterates through cluster to write to file
     for (int i = 0; i < maxParticles; i++) {
@@ -42,12 +41,15 @@ int main() {
     int seed, maxParticles, column;
     float stickProbability;
 
+    // opens setup file
     ifstream MyReadFile("setup.csv");
+
     // iterates through lines in setup file
     while (getline(MyReadFile, values)) {
         std::stringstream s(values);
         column = 0;
-        //reads through line to get seed, stickProbability, maxParticles and assigns to variables
+
+        //reads through line to get seed, stickProbability, maxParticles, and bool to assigns to variables
         while (getline(s, word, ',')) {
             if (column == 0) {
                 seed = stoi(word);
@@ -55,8 +57,7 @@ int main() {
                 stickProbability = stof(word);
             } else if (column == 2) {
                 maxParticles = stoi(word);
-            }
-            else if (column == 3) {
+            } else if (column == 3) {
                 istringstream(word) >> bump;
             }
             column += 1;

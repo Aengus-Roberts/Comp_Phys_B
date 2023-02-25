@@ -12,7 +12,6 @@
 #include <sstream>
 #include <format>
 
-#include "Window.h"
 #include "Particle.h"
 #include "rnd.h"
 
