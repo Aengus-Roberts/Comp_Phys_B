@@ -32,6 +32,7 @@ void runProgram(int seed, float stickProbability, int maxParticles, bool bump) {
         runOutput << (sys->cluster[i]);
     }
     runOutput.close();
+    delete sys;
 }
 
 int main() {
