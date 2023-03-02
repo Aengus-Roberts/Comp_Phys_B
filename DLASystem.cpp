@@ -171,7 +171,7 @@ void DLASystem::moveLastParticle() {
             updateClusterRadius(lastP->pos);  // update the cluster radius, addCircle, etc.
 
             stringstream str;
-            str << newpos[0] << "," << newpos[1] << "," << clusterRadius << "\n";
+            str << newpos[0] << "," << newpos[1] << "," << clusterRadius;
             cluster.push_back(str.str());
         }
     }
@@ -187,7 +187,7 @@ void DLASystem::moveLastParticle() {
                 updateClusterRadius(lastP->pos);  // update the cluster radius, addCircle, etc.
 
                 stringstream str;
-                str << newpos[0] << "," << newpos[1] << "," << clusterRadius << "\n";
+                str << newpos[0] << "," << newpos[1] << "," << clusterRadius;
                 cluster.push_back(str.str());
             }
             else {

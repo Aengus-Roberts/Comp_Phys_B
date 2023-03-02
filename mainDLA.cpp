@@ -28,8 +28,8 @@ void runProgram(int seed, float stickProbability, int maxParticles, bool bump) {
     title << "data/" << seed << "-" << stickProbability << "-" << maxParticles << "-" << bump << ".csv";
     ofstream runOutput(title.str());
     // iterates through cluster to write to file
-    for (int i = 0; i < maxParticles; i++) {
-        runOutput << (sys->cluster[i]);
+    for (auto &line: sys->cluster) {
+        runOutput << line << endl;
     }
     runOutput.close();
     delete sys;

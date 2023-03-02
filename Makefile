@@ -10,7 +10,7 @@
 
 CXX     = clang++
 
-CXXFLAGS = -Wall -Wextra -g -O0 
+CXXFLAGS = -Wall -Wextra -g -O0 --std=c++20
 
 IFLAGS = -I/usr/local/include -I/usr/include
 
